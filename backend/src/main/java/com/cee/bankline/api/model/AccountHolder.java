@@ -19,7 +19,7 @@ public class AccountHolder {
     @Column(name = "holder_id")
     private Integer holderId;
     private String ssn;
-    private String nome;
+    private String name;
     @Embedded
     private Account account;
 }
