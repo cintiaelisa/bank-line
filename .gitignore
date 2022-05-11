@@ -1,4 +1,7 @@
 /.idea/
 /backend/.idea
+/backend/target
+/demo/
+/demo/.idea
 /frontend/.idea
 /mobile/.idea
