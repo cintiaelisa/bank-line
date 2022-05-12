@@ -1,15 +1,16 @@
 package com.cee.bankline.api.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.cee.bankline.api.model.Account;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class AccountHolderDTO {
+    private Integer holderId;
     private String ssn;
     private String name;
+    private Account account;
 }

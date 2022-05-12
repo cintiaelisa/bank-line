@@ -3,13 +3,12 @@ package com.cee.bankline.api.controller;
 import com.cee.bankline.api.dto.AccountHolderDTO;
 import com.cee.bankline.api.model.AccountHolder;
 import com.cee.bankline.api.service.AccountHolderService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/account-holder")
+@RestController
+@RequestMapping("/account-holder")
 public class AccountHolderController {
 
     private final AccountHolderService accountHolderService;
@@ -19,12 +18,13 @@ public class AccountHolderController {
     }
 
     @GetMapping
-    public List<AccountHolder> getAllAccountHolders() {
+    public List<AccountHolderDTO> getAllAccountHolders() {
         return accountHolderService.getAllAccountHolder();
     }
 
     @PostMapping
-    public void createAccountHolder(AccountHolderDTO accountHolderDTO) {
+    public void createAccountHolder(@RequestBody AccountHolderDTO accountHolderDTO) {
+        System.out.println(accountHolderDTO);
         accountHolderService.createAccountHolder(accountHolderDTO);
     }
 
